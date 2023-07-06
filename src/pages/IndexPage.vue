@@ -1,7 +1,7 @@
 <template>
   <q-page class="column items-center justify-evenly">
     <div>
-      <h1>Qasar qrcode-vue3 demo app</h1>
+      <h1>Quasar qrcode-vue3 demo app</h1>
       <div>
         Npm package:
         <a href="https://www.npmjs.com/package/qrcode-vue3">qrcode-vue3</a>
