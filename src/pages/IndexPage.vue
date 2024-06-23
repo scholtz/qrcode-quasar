@@ -19,7 +19,11 @@
         >
       </div>
     </div>
+    <q-input v-model="image" label="Image" class="full-width q-pa-lg" />
     <q-input v-model="data" label="Data in QRCode" class="full-width q-pa-lg" />
+    <q-input v-model="c1" label="Color 1" class="full-width q-pa-lg" />
+    <q-input v-model="c2" label="Color 2" class="full-width q-pa-lg" />
+    <q-input v-model="c3" label="Color 3" class="full-width q-pa-lg" />
     {{ data }}
     <div style="height: 500px">
       <QRCodeVue3
@@ -33,21 +37,21 @@
           imageSize: 0.4,
           margin: 10,
         }"
-        :corners-square-options="{ type: 'dot', color: '#2D79C5' }"
-        :corners-dot-options="{ type: undefined, color: '#2D79C5' }"
+        :corners-square-options="{ type: 'dot', color: c1 }"
+        :corners-dot-options="{ type: undefined, color: c1 }"
         :dots-options="{
           type: 'dots',
-          color: '#2D79C5',
+          color: c1,
           gradient: {
             type: 'linear',
             rotation: 0,
             colorStops: [
-              { offset: 0, color: '#3998F7' },
-              { offset: 1, color: '#24619E' },
+              { offset: 0, color: c2 },
+              { offset: 1, color: c3 },
             ],
           },
         }"
-        image="usdc.svg"
+        :image="image"
         :download="false"
       />
     </div>
@@ -61,4 +65,8 @@ import { ref } from 'vue';
 const data = ref<string>(
   'algorand://ALGONAUTSPIUHDCX3SLFXOFDUKOE4VY36XV4JX2JHQTWJNKVBKPEBQACRY?amount=10000000&note=Quasar&label=Quasar&asset=31566704'
 );
+const image = ref<string>('usdc.svg');
+const c1 = ref<string>('#2D79C5');
+const c2 = ref<string>('#3998F7');
+const c3 = ref<string>('#24619E');
 </script>
